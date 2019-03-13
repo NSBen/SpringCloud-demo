@@ -9,6 +9,9 @@
 	</parent>
 	<groupId>demo-common</groupId>
 	<artifactId>demo-common</artifactId>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>com.dianping.cat</groupId>

@@ -44,7 +44,7 @@
 		</dependency>
 		<dependency>
 			<groupId>demo</groupId>
-			<artifactId>demo-service-account-api</artifactId>
+			<artifactId>demo-service-stock-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

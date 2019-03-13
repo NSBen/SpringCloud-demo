@@ -14,12 +14,12 @@
 	</parent>
 
 	<modules>
+		<module>demo-common</module>
 		<module>demo-service-order-api</module>
 		<module>demo-service-account-api</module>
 		<module>demo-service-order</module>
 		<module>demo-service-account</module>
 		<module>demo-service-stock</module>
 		<module>demo-service-stock-api</module>
-		<module>demo-common</module>
 	</modules>
 </project>
