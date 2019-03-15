@@ -37,11 +37,19 @@ public class HomeController {
 		return "hello consul";
 	}
 
-	@GetMapping("/catTest")
+	@GetMapping("/catLinkTest")
 	@CatAnnotation
 	public String catTest2() {
 		String deductStock = stockApiClient.catTestStock("ss");
 		String catTest4 = accountApiClient.catTest4();
+		return deductStock+" "+catTest4;
+	}
+	
+	@GetMapping("/catExceptionTest")
+	@CatAnnotation
+	public String catExceptionTest() {
+		String deductStock = stockApiClient.catTestStock("ss");
+		String catTest4 = accountApiClient.catExceptionTest();
 		return deductStock+" "+catTest4;
 	}
 

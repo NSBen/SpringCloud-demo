@@ -33,5 +33,9 @@ public interface AccountRemoteApi {
 	
 	@RequestMapping(value = "/account/hi", method = RequestMethod.GET)
 	public String hi();
+	
+	@RequestMapping(value = "/account/catExceptionTest", method = RequestMethod.GET)
+	String catExceptionTest();
+
 
 }

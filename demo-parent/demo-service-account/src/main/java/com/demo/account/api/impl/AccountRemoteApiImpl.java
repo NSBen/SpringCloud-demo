@@ -41,4 +41,9 @@ public class AccountRemoteApiImpl implements AccountRemoteApi {
 		return "Demo-Ac";
 	}
 
+	@Override
+	public String catExceptionTest() {
+		throw new RuntimeException("抛异常");
+	}
+
 }
