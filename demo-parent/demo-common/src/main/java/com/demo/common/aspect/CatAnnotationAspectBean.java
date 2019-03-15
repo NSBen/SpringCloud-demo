@@ -8,8 +8,6 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestAttributes;
@@ -35,7 +33,7 @@ public class CatAnnotationAspectBean {
 
 	private static final Logger logger = LoggerFactory.getLogger(CatAnnotationAspectBean.class);
 
-	@Pointcut("@annotation(com.demo.common.annotation.CatAnnotation2)")
+	@Pointcut("@annotation(com.demo.common.annotation.CatAnnotation)")
 	public void cutPoint() {
 	};
 

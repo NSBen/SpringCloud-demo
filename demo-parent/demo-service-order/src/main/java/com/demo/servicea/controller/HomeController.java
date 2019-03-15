@@ -37,12 +37,12 @@ public class HomeController {
 		return "hello consul";
 	}
 
-	@GetMapping("/catTest555555555555")
+	@GetMapping("/catTest")
 	@CatAnnotation
 	public String catTest2() {
 		String deductStock = stockApiClient.catTestStock("ss");
-		accountApiClient.catTest4();
-		return deductStock;
+		String catTest4 = accountApiClient.catTest4();
+		return deductStock+" "+catTest4;
 	}
 
 	@ApiOperation(value = "调用Account的支付方法", notes = "")

@@ -12,11 +12,11 @@ import com.demo.stock.client.AccountRemoteApiClient;
 public class StockRemoteApiImpl implements StockRemoteApi {
 
 	@Autowired
-	private AccountRemoteApiClient client;
+	private AccountRemoteApiClient accountClient;
 
 	@Override
 	public String deductStock(@RequestParam("goodId") String goodId, @RequestParam("num") Integer num) {
-		String check = client.check("aa");
+		String check = accountClient.check("aa");
 		System.out.println("商品:" + goodId + ",扣了" + num + "个库存");
 		return check + ",扣库存成功";
 	}
@@ -24,8 +24,8 @@ public class StockRemoteApiImpl implements StockRemoteApi {
 	@Override
 	@CatAnnotation
 	public String catTestStock(String goodId) {
-		client.catTest3();
-		client.check("aaa");
+		accountClient.catTest3();
+		accountClient.check("aaa");
 		return "catTestStock";
 	}
 
