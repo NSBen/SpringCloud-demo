@@ -1,3 +1,21 @@
+项目结构:
+
+	demo-common	公共依赖
+		主要有Cat的AOP埋点
+	
+	demo-zuul	API网关
+		
+	下面这些都是demo服务
+	demo-service-order	订单
+		swaggerApi：http://localhost:8301/swagger-ui.html  
+	demo-service-order-api
+
+	demo-service-stock	库存
+	demo-service-stock-api
+	
+	demo-service-account	账户
+	demo-service-account-api
+
 组件配置文件:
 
 	RPC:SpringCloud+Feign
@@ -40,11 +58,29 @@ FAQ:
 		</dependency> <!--这里报错-->
 		git地址：https://github.com/dianping/cat.git
 		cd到根目录执行：mvn install -Dmaven.test.skip=true
+				
+		Cat公有云的仓库地址，编译不行的话配置一下settings.xml再试一下
+		<repositories>
+		  <repository>
+		     <id>central</id>
+		     <name>Maven2 Central Repository</name>
+		     <layout>default</layout>
+		     <url>http://repo1.maven.org/maven2</url>
+		  </repository>
+		  <repository>
+		     <id>unidal.releases</id>
+		     <url>http://unidal.org/nexus/content/repositories/releases/</url>
+		  </repository>
+		</repositories>
 	
 	
 	Consul
 		应用需要提供一个心跳检查的接口 /health  如果没有的话注册中心看到服务的状态是不可用的
 		配置项：
 		#spring.cloud.consul.discovery.healthCheckPath = /health
+		
+	
+	Apollo
+		Apollo启动需要用到数据库，保证数据库的服务启动
 		
 	
