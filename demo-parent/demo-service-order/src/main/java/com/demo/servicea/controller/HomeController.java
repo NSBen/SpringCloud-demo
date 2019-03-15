@@ -31,12 +31,14 @@ public class HomeController {
 	public String home() {
 		return "teststring配置项：" + demoConfig.getEnv();
 	}
-
+	
+	@ApiOperation(value = "consul的心跳测试接口", notes = "")
 	@GetMapping("/health")
 	public String health() {
 		return "hello consul";
 	}
 
+	@ApiOperation(value = "Cat监控调用链", notes = "")
 	@GetMapping("/catLinkTest")
 	@CatAnnotation
 	public String catTest2() {
@@ -45,6 +47,7 @@ public class HomeController {
 		return deductStock+" "+catTest4;
 	}
 	
+	@ApiOperation(value = "Cat监控调用链报错的情况", notes = "")
 	@GetMapping("/catExceptionTest")
 	@CatAnnotation
 	public String catExceptionTest() {
