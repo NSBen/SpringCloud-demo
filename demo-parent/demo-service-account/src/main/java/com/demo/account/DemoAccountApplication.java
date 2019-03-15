@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 
@@ -12,7 +13,7 @@ import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 @EnableApolloConfig
 @EnableDiscoveryClient
 @EnableFeignClients
-@ComponentScan(basePackages = {"com.demo.common"})
+@ComponentScan(basePackages = {"com.demo"})
 public class DemoAccountApplication {
 	
 	public static void main(String[] args) {

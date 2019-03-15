@@ -13,7 +13,25 @@ public interface AccountRemoteApi {
 	 * @param account
 	 * @return
 	 */
-	@RequestMapping(value = "pay", method = RequestMethod.GET)
-	public boolean pay(@RequestParam("userId") String userId, @RequestParam("account") Integer account);
+	@RequestMapping(value = "/account/pay", method = RequestMethod.GET)
+	public String pay(@RequestParam("userId") String userId, @RequestParam("account") Integer account);
+
+	/**
+	 * 查询账户余额
+	 * 
+	 * @param userId
+	 * @return
+	 */
+	@RequestMapping(value = "/account/check", method = RequestMethod.GET)
+	public String check(@RequestParam("userId") String userId);
+
+	@RequestMapping(value = "/account/catTestAccount3", method = RequestMethod.GET)
+	public String catTest3();
+
+	@RequestMapping(value = "/account/catTestAccount4", method = RequestMethod.GET)
+	public String catTest4();
+	
+	@RequestMapping(value = "/account/hi", method = RequestMethod.GET)
+	public String hi();
 
 }

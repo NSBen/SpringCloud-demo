@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.demo.common.annotation.CatAnnotation;
 import com.demo.servicea.client.AccountRemoteApiClient;
+import com.demo.servicea.client.StockRemoteApiClient;
 import com.demo.servicea.config.DemoConfig;
 
 import io.swagger.annotations.ApiOperation;
@@ -21,6 +23,9 @@ public class HomeController {
 	@Autowired
 	private AccountRemoteApiClient accountApiClient;
 
+	@Autowired
+	private StockRemoteApiClient stockApiClient;
+
 	@ApiOperation(value = "测试apollo的配置刷新  teststring配置项", notes = "")
 	@GetMapping("/hi")
 	public String home() {
@@ -32,11 +37,23 @@ public class HomeController {
 		return "hello consul";
 	}
 
+	@GetMapping("/catTest555555555555")
+	@CatAnnotation
+	public String catTest2() {
+		String deductStock = stockApiClient.catTestStock("ss");
+		accountApiClient.catTest4();
+		return deductStock;
+	}
+
 	@ApiOperation(value = "调用Account的支付方法", notes = "")
-	@RequestMapping(value = "pay", method = RequestMethod.GET)
+	@RequestMapping(value = "/api/order1", method = RequestMethod.GET)
 	public String pay(@RequestParam("userId") String userId, @RequestParam("account") Integer account) {
 		System.out.println(userId + account);
-		boolean pay = accountApiClient.pay(userId, account);
-		return pay + "";
+		// 扣钱
+		String pay = accountApiClient.pay(userId, account);
+		// 扣库存
+		String deductStock = stockApiClient.deductStock("手机1", 1);
+
+		return "扣钱：" + pay + "，扣库存：" + deductStock;
 	}
 }
