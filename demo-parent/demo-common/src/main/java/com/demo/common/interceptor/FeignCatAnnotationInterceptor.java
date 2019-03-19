@@ -18,7 +18,7 @@ import feign.RequestTemplate;
  * @author wushiyu
  *
  */
-@Component
+//@Component
 public class FeignCatAnnotationInterceptor implements RequestInterceptor {
 
 	private Logger logger = LoggerFactory.getLogger(FeignCatAnnotationInterceptor.class);

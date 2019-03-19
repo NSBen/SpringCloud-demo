@@ -28,9 +28,9 @@ import com.dianping.cat.message.internal.NullMessage;
  * @author wushiyu
  *
  */
-@Aspect
-@EnableAspectJAutoProxy
-@Configuration
+//@Aspect
+//@EnableAspectJAutoProxy
+//@Configuration
 public class CatAnnotationAspectBean {
 
 	private static final Logger logger = LoggerFactory.getLogger(CatAnnotationAspectBean.class);

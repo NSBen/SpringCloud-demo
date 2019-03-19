@@ -3,8 +3,9 @@ package com.demo.stock.client;
 import org.springframework.cloud.openfeign.FeignClient;
 
 import com.demo.account.api.AccountRemoteApi;
+import com.demo.common.interceptor.CatFeignConfiguration;
 
-@FeignClient("demo-account")
+@FeignClient(name="demo-account", configuration = CatFeignConfiguration.class)
 public interface AccountRemoteApiClient extends AccountRemoteApi {
 
 }

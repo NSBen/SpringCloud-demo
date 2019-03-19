@@ -4,7 +4,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.demo.account.api.AccountRemoteApi;
-import com.demo.common.annotation.CatAnnotation;
 
 @RestController("/api")
 public class AccountRemoteApiImpl implements AccountRemoteApi {
@@ -16,21 +15,18 @@ public class AccountRemoteApiImpl implements AccountRemoteApi {
 	}
 
 	@Override
-	@CatAnnotation
 	public String check(@RequestParam("userId") String userId) {
 		System.out.println("用户：" + userId + "还有很多钱");
 		return "查询成功";
 	}
 
 	@Override
-	@CatAnnotation
 	public String catTest3() {
 		// TODO Auto-generated method stub
 		return "catTest3";
 	}
 
 	@Override
-	@CatAnnotation
 	public String catTest4() {
 		// TODO Auto-generated method stub
 		return "catTest4";
