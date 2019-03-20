@@ -109,12 +109,12 @@
 			<version>${ehcache3.version}</version>
 		</dependency>
 
-		<!--验证码 -->
+		<!--验证码 
 		<dependency>
 			<groupId>com.github.penggle</groupId>
 			<artifactId>kaptcha</artifactId>
 			<version>${kaptcha.version}</version>
-		</dependency>
+		</dependency>-->
 
 		<!--beetl模板引擎 -->
 		<dependency>

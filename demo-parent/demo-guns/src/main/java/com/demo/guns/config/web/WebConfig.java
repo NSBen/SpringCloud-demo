@@ -15,8 +15,6 @@
  */
 package com.demo.guns.config.web;
 
-import java.util.Properties;
-
 import org.springframework.aop.Advisor;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.JdkRegexpMethodPointcut;
@@ -43,8 +41,6 @@ import com.demo.guns.config.properties.GunsProperties;
 import com.demo.guns.core.common.controller.GunsErrorView;
 import com.demo.guns.core.interceptor.RestApiInteceptor;
 import com.demo.guns.core.listener.ConfigListener;
-import com.google.code.kaptcha.impl.DefaultKaptcha;
-import com.google.code.kaptcha.util.Config;
 
 import cn.stylefeng.roses.core.xss.XssFilter;
 
@@ -69,7 +65,6 @@ public class WebConfig implements WebMvcConfigurer {
 			// swagger
 			registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
 			registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
-			registry.addResourceHandler("/csrf/**").addResourceLocations("classpath:/META-INF/resources/csrf/");
 		}
 		// 本应用
 		registry.addResourceHandler("/assets/**").addResourceLocations("classpath:/assets/");
@@ -128,7 +123,7 @@ public class WebConfig implements WebMvcConfigurer {
 	@Bean
 	public JdkRegexpMethodPointcut druidStatPointcut() {
 		JdkRegexpMethodPointcut druidStatPointcut = new JdkRegexpMethodPointcut();
-		String patterns = "cn.stylefeng.guns.modular.*.service.*";
+		String patterns = "com.demo.guns.modular.*.service.*";
 		// 可以set多个
 		druidStatPointcut.setPatterns(patterns);
 		return druidStatPointcut;
@@ -209,21 +204,21 @@ public class WebConfig implements WebMvcConfigurer {
 	/**
 	 * 验证码生成相关
 	 */
-	@Bean
-	public DefaultKaptcha kaptcha() {
-		Properties properties = new Properties();
-		properties.put("kaptcha.border", "no");
-		properties.put("kaptcha.border.color", "105,179,90");
-		properties.put("kaptcha.textproducer.font.color", "blue");
-		properties.put("kaptcha.image.width", "125");
-		properties.put("kaptcha.image.height", "45");
-		properties.put("kaptcha.textproducer.font.size", "45");
-		properties.put("kaptcha.session.key", "code");
-		properties.put("kaptcha.textproducer.char.length", "4");
-		properties.put("kaptcha.textproducer.font.names", "宋体,楷体,微软雅黑");
-		Config config = new Config(properties);
-		DefaultKaptcha defaultKaptcha = new DefaultKaptcha();
-		defaultKaptcha.setConfig(config);
-		return defaultKaptcha;
-	}
+//	@Bean
+//	public DefaultKaptcha kaptcha() {
+//		Properties properties = new Properties();
+//		properties.put("kaptcha.border", "no");
+//		properties.put("kaptcha.border.color", "105,179,90");
+//		properties.put("kaptcha.textproducer.font.color", "blue");
+//		properties.put("kaptcha.image.width", "125");
+//		properties.put("kaptcha.image.height", "45");
+//		properties.put("kaptcha.textproducer.font.size", "45");
+//		properties.put("kaptcha.session.key", "code");
+//		properties.put("kaptcha.textproducer.char.length", "4");
+//		properties.put("kaptcha.textproducer.font.names", "宋体,楷体,微软雅黑");
+//		Config config = new Config(properties);
+//		DefaultKaptcha defaultKaptcha = new DefaultKaptcha();
+//		defaultKaptcha.setConfig(config);
+//		return defaultKaptcha;
+//	}
 }
