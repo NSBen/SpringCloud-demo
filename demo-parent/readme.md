@@ -40,12 +40,12 @@ FAQ:
 	
 	maven镜像
 		一些jar包下载不下来,可以尝试换一个maven仓库
-		<mirror>
-		    	<id>aliyunmaven</id>
-		    	<mirrorOf>*</mirrorOf>
-		    	<name>阿里云公共仓库</name>
-		    	<url>https://maven.aliyun.com/repository/public</url>
-		</mirror>
+		<mirror>  
+	      <id>aliyun</id>  
+	      <name>aliyun</name>  
+	      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>  
+	      <mirrorOf>central</mirrorOf>  
+	    </mirror>
 	
 	
 	Cat
