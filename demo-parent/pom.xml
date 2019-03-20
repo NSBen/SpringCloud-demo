@@ -23,5 +23,6 @@
 		<module>demo-service-stock-api</module>
 
 		<module>demo-zuul</module>
+		<module>demo-guns</module>
 	</modules>
 </project>

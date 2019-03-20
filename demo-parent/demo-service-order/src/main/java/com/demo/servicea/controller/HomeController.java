@@ -11,6 +11,7 @@ import com.demo.common.annotation.CatAnnotation;
 import com.demo.servicea.client.AccountRemoteApiClient;
 import com.demo.servicea.client.StockRemoteApiClient;
 import com.demo.servicea.config.DemoConfig;
+import com.demo.servicea.service.impl.DemoService1Impl;
 
 import io.swagger.annotations.ApiOperation;
 
@@ -25,11 +26,21 @@ public class HomeController {
 
 	@Autowired
 	private StockRemoteApiClient stockApiClient;
+	
+	@Autowired
+	private DemoService1Impl s1;
 
 	@ApiOperation(value = "测试apollo的配置刷新  teststring配置项", notes = "")
 	@GetMapping("/hi")
 	public String home() {
 		return "teststring配置项：" + demoConfig.getEnv();
+	}
+	
+	@ApiOperation(value = "测试apollo的配置刷新  teststring配置项", notes = "")
+	@GetMapping("/localCat")
+	public String localCat() {
+		s1.printlStr("aaaaa");
+		return "ok";
 	}
 	
 	@ApiOperation(value = "consul的心跳测试接口", notes = "")

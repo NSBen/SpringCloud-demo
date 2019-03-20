@@ -16,7 +16,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableDiscoveryClient
 @EnableFeignClients
 @ComponentScan(basePackages = {"com.demo"})
-@EnableSwagger2
 public class DemoOrderApplication {
 	
 	public static void main(String[] args) {
