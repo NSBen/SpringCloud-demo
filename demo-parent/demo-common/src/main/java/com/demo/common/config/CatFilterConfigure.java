@@ -1,12 +1,15 @@
 package com.demo.common.config;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.demo.common.fliter.CatContextServletFilter;
 
-@Configuration
+//@Configuration
 public class CatFilterConfigure {
 
     @Bean

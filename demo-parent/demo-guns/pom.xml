@@ -22,6 +22,7 @@
 		<ehcache.core.version>2.6.11</ehcache.core.version>
 		<mysql-connector-java.version>8.0.11</mysql-connector-java.version>
 		<jwt.version>0.9.0</jwt.version>
+		<spring-cloud.version>Greenwich.SR1</spring-cloud.version>
 	</properties>
 	<dependencies>
 
@@ -64,6 +65,15 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-consul-discovery</artifactId>
 		</dependency>
 
 		<!--shiro依赖和缓存 -->
@@ -109,12 +119,8 @@
 			<version>${ehcache3.version}</version>
 		</dependency>
 
-		<!--验证码 
-		<dependency>
-			<groupId>com.github.penggle</groupId>
-			<artifactId>kaptcha</artifactId>
-			<version>${kaptcha.version}</version>
-		</dependency>-->
+		<!--验证码 <dependency> <groupId>com.github.penggle</groupId> <artifactId>kaptcha</artifactId> 
+			<version>${kaptcha.version}</version> </dependency> -->
 
 		<!--beetl模板引擎 -->
 		<dependency>
@@ -176,6 +182,18 @@
 		<!--<artifactId>spring-boot-starter-data-redis</artifactId> -->
 		<!--</dependency> -->
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
@@ -254,21 +272,8 @@
 		</resources>
 	</build>
 
-	<!-- <profiles>
-		<profile>
-			<id>local</id>
-			<properties>
-				<spring.active>local</spring.active>
-			</properties>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-		</profile>
-		<profile>
-			<id>dev</id>
-			<properties>
-				<spring.active>dev</spring.active>
-			</properties>
-		</profile>
-	</profiles> -->
+	<!-- <profiles> <profile> <id>local</id> <properties> <spring.active>local</spring.active> 
+		</properties> <activation> <activeByDefault>true</activeByDefault> </activation> 
+		</profile> <profile> <id>dev</id> <properties> <spring.active>dev</spring.active> 
+		</properties> </profile> </profiles> -->
 </project>

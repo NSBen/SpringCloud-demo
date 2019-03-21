@@ -1,0 +1,75 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/sysTenement/sysTenement_edit.js"]}){
+<form id="sysTenementForm" lay-filter="sysTenementForm" class="layui-form model-form">
+    <input name="tenementId" type="hidden"/>
+    <div class="layui-form-item">
+        <label class="layui-form-label">简称<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="simpleName" name="simpleName" placeholder="请输入简称" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">全称<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="fullName" name="fullName" placeholder="请输入全称" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系人<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="linkman" name="linkman" placeholder="请输入联系人" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">联系电话<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="mobile" name="mobile" placeholder="请输入联系电话" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">租户类型id<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="tenementTypeId" name="tenementTypeId" placeholder="请输入租户类型id" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">排序<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="sort" name="sort" placeholder="请输入排序" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">状态<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="status" name="status" placeholder="请输入状态" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">创建时间<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="createTime" name="createTime" placeholder="请输入创建时间" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">更新时间<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="updateTime" name="updateTime" placeholder="请输入更新时间" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">创建人<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="createUser" name="createUser" placeholder="请输入创建人" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">更新人<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="updateUser" name="updateUser" placeholder="请输入更新人" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>保存</button>
+    </div>
+</form>
+@}

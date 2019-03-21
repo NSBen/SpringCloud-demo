@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.guns.mapper.SysTenementMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.demo.guns.entity.SysTenement">
+        <id column="tenement_id" property="tenementId" />
+        <result column="simple_name" property="simpleName" />
+        <result column="full_name" property="fullName" />
+        <result column="linkman" property="linkman" />
+        <result column="mobile" property="mobile" />
+        <result column="tenement_type_id" property="tenementTypeId" />
+        <result column="sort" property="sort" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="create_user" property="createUser" />
+        <result column="update_user" property="updateUser" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        base.tenement_id, base.simple_name, base.full_name, base.linkman, base.mobile, base.tenement_type_id, base.sort, base.status, base.create_time, base.update_time, base.create_user, base.update_user
+    </sql>
+
+</mapper>

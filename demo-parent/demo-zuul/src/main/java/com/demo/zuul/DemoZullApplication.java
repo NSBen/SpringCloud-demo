@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
+import com.demo.zuul.filter.CatZuulFilter;
 
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -19,7 +20,7 @@ import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 @EnableApolloConfig
 @RestController
 public class DemoZullApplication {
-	
+
 	public static final String ZUUL_PROPERTIES_BEAN = "ZUUL_PROPERTIES_BEAN";
 
 	@Primary
@@ -29,9 +30,15 @@ public class DemoZullApplication {
 	public ZuulProperties zuulProperties() {
 		return new ZuulProperties();
 	}
+	
+	@Bean
+	public CatZuulFilter catZuulFilter() {
+		return new CatZuulFilter();
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoZullApplication.class, args);
 	}
 
+	
 }

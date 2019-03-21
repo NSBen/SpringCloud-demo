@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.guns.mapper.SysDeptMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.demo.guns.entity.SysDept">
+        <id column="dept_id" property="deptId" />
+        <result column="simple_name" property="simpleName" />
+        <result column="full_name" property="fullName" />
+        <result column="dept_type" property="deptType" />
+        <result column="pid" property="pid" />
+        <result column="pids" property="pids" />
+        <result column="is_virtual" property="isVirtual" />
+        <result column="full_path" property="fullPath" />
+        <result column="wx_dept_id" property="wxDeptId" />
+        <result column="description" property="description" />
+        <result column="sort" property="sort" />
+        <result column="status" property="status" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="create_user" property="createUser" />
+        <result column="update_user" property="updateUser" />
+        <result column="tenement_id" property="tenementId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        base.dept_id, base.simple_name, base.full_name, base.dept_type, base.pid, base.pids, base.is_virtual, base.full_path, base.wx_dept_id, base.description, base.sort, base.status, base.create_time, base.update_time, base.create_user, base.update_user, base.tenement_id
+    </sql>
+
+</mapper>

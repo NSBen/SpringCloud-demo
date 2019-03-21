@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.demo.guns.core.common.node.MenuNode;
 import com.demo.guns.modular.system.service.UserService;
@@ -32,8 +33,18 @@ public class HomeController {
 		model.addAttribute("menus", menus);
 		return "/index.html";
 	}
+	
+	@RequestMapping(value = "/menu", method = RequestMethod.GET)
+	@ResponseBody
+	public List<MenuNode> menu(Model model) {
+		List<Long> roleList = new ArrayList<>();
+		roleList.add(1l);
+		List<MenuNode> menus = userService.getUserMenuNodes(roleList);
+		return menus;
+	}
 
 	@GetMapping("/health")
+	@ResponseBody
 	public String health() {
 		return "hello consul";
 	}

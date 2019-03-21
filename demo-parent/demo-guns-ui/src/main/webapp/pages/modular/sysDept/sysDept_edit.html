@@ -1,0 +1,105 @@
+@layout("/common/_container.html",{bg:"bg-white",js:["/assets/modular/sysDept/sysDept_edit.js"]}){
+<form id="sysDeptForm" lay-filter="sysDeptForm" class="layui-form model-form">
+    <input name="deptId" type="hidden"/>
+    <div class="layui-form-item">
+        <label class="layui-form-label">简称<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="simpleName" name="simpleName" placeholder="请输入简称" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">全称<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="fullName" name="fullName" placeholder="请输入全称" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">部门类型<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="deptType" name="deptType" placeholder="请输入部门类型" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">父部门id<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="pid" name="pid" placeholder="请输入父部门id" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">父id路径<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="pids" name="pids" placeholder="请输入父id路径" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">是否虚拟部门<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="isVirtual" name="isVirtual" placeholder="请输入是否虚拟部门" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">全路径名称<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="fullPath" name="fullPath" placeholder="请输入全路径名称" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">微信部门id<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="wxDeptId" name="wxDeptId" placeholder="请输入微信部门id" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">描述<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="description" name="description" placeholder="请输入描述" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">排序<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="sort" name="sort" placeholder="请输入排序" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">状态<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="status" name="status" placeholder="请输入状态" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">创建时间<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="createTime" name="createTime" placeholder="请输入创建时间" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">更新时间<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="updateTime" name="updateTime" placeholder="请输入更新时间" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">创建人<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="createUser" name="createUser" placeholder="请输入创建人" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">更新人<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="updateUser" name="updateUser" placeholder="请输入更新人" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">机构id<span style="color: red;">*</span></label>
+        <div class="layui-input-block">
+            <input id="tenementId" name="tenementId" placeholder="请输入机构id" type="text" class="layui-input" lay-verify="required" required/>
+        </div>
+    </div>
+    <div class="layui-form-item text-right">
+        <button class="layui-btn layui-btn-primary" type="button" ew-event="closeDialog">取消</button>
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>保存</button>
+    </div>
+</form>
+@}

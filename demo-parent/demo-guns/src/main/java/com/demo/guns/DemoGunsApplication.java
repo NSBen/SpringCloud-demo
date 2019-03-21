@@ -19,6 +19,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 import com.ctrip.framework.apollo.spring.annotation.EnableApolloConfig;
 
@@ -31,6 +33,8 @@ import cn.stylefeng.roses.core.config.WebAutoConfiguration;
  * @Date 2017/5/21 12:06
  */
 @SpringBootApplication(exclude = { WebAutoConfiguration.class })
+@EnableDiscoveryClient
+@EnableFeignClients
 @EnableApolloConfig
 public class DemoGunsApplication {
 

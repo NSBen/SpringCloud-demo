@@ -24,5 +24,6 @@
 
 		<module>demo-zuul</module>
 		<module>demo-guns</module>
+		<module>demo-guns-ui</module>
 	</modules>
 </project>

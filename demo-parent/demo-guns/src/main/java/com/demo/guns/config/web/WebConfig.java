@@ -15,6 +15,10 @@
  */
 package com.demo.guns.config.web;
 
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 import org.springframework.aop.Advisor;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.JdkRegexpMethodPointcut;
@@ -37,6 +41,7 @@ import com.alibaba.druid.support.http.StatViewServlet;
 import com.alibaba.druid.support.http.WebStatFilter;
 import com.alibaba.druid.support.spring.stat.BeanTypeAutoProxyCreator;
 import com.alibaba.druid.support.spring.stat.DruidStatInterceptor;
+import com.demo.common.fliter.CatContextServletFilter;
 import com.demo.guns.config.properties.GunsProperties;
 import com.demo.guns.core.common.controller.GunsErrorView;
 import com.demo.guns.core.interceptor.RestApiInteceptor;
@@ -174,7 +179,26 @@ public class WebConfig implements WebMvcConfigurer {
 		source.registerCorsConfiguration("/**", buildConfig()); // 4
 		FilterRegistrationBean filterRegistrationBean = new FilterRegistrationBean(new CorsFilter(source));
 		filterRegistrationBean.addUrlPatterns("/*");
+		filterRegistrationBean.setOrder(2);
 		return filterRegistrationBean;
+	}
+
+	/**
+	 * cat的埋点过滤器
+	 * 
+	 * @return
+	 */
+	@Bean
+	public FilterRegistrationBean catFilter() {
+		FilterRegistrationBean registration = new FilterRegistrationBean();
+		CatContextServletFilter filter = new CatContextServletFilter();
+		Set<String> set = new HashSet<>(Arrays.asList("/assets","/health"));
+		filter.setAllowedPaths(set);
+		registration.setFilter(filter);
+		registration.addUrlPatterns("/*");
+		registration.setName("cat-filter");
+		registration.setOrder(2);
+		return registration;
 	}
 
 	private CorsConfiguration buildConfig() {
