@@ -31,10 +31,6 @@ public class DemoZullApplication {
 		return new ZuulProperties();
 	}
 	
-	@Bean
-	public CatZuulFilter catZuulFilter() {
-		return new CatZuulFilter();
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoZullApplication.class, args);

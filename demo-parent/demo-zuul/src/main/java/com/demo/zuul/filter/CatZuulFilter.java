@@ -31,6 +31,8 @@ public class CatZuulFilter extends ZuulFilter {
 		HttpServletRequest request = ctx.getRequest();
 		HttpServletResponse response = ctx.getResponse();
 		String uri = request.getRequestURI();
+		
+		Transaction transaction = Cat.newTransaction(CatConstants.TYPE_URL, uri);
 
 		// 若header中有context相关属性，则生成调用链，若无，仅统计请求的Transaction
 		if (null != request.getHeader(CatConstantsExt.CAT_HTTP_HEADER_ROOT_MESSAGE_ID)) {
@@ -53,7 +55,6 @@ public class CatZuulFilter extends ZuulFilter {
 					catContext.getProperty(Cat.Context.CHILD));
 		}
 
-		Transaction transaction = Cat.newTransaction(CatConstants.TYPE_URL, uri);
 
 		Cat.logEvent(CatConstantsExt.Type_URL_METHOD, request.getMethod(), Message.SUCCESS,
 				request.getRequestURL().toString());
