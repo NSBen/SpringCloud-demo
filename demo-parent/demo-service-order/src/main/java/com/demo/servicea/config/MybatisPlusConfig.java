@@ -31,6 +31,7 @@ import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import com.ctrip.framework.apollo.Config;
 import com.ctrip.framework.apollo.ConfigService;
+import com.demo.common.constant.Constants;
 
 @Configuration
 @MapperScan("com.demo.servicea.mapper")
@@ -64,7 +65,7 @@ public class MybatisPlusConfig {
         Config config = ConfigService.getAppConfig();
         String defaultValue = ""; 
         Set<String> propertyNames = config.getPropertyNames();
-        propertyNames.stream().filter(s -> s.startsWith("mapper.")).forEach(s ->{
+        propertyNames.stream().filter(s -> s.startsWith(Constants.APOLLO_MAPPER_PREFIX)).forEach(s ->{
             String value = config.getProperty(s,defaultValue);
             InputStream is = new ByteArrayInputStream(value.getBytes());
             InputStreamResource a = new InputStreamResource(is,s);

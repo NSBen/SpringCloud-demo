@@ -16,6 +16,7 @@ import com.ctrip.framework.apollo.model.ConfigChange;
 import com.ctrip.framework.apollo.model.ConfigChangeEvent;
 import com.ctrip.framework.apollo.spring.annotation.ApolloConfig;
 import com.ctrip.framework.apollo.spring.annotation.ApolloConfigChangeListener;
+import com.demo.common.constant.Constants;
 
 @Service
 public class ConfigRefresher implements ApplicationContextAware {
@@ -38,12 +39,8 @@ public class ConfigRefresher implements ApplicationContextAware {
 	private void onChange(ConfigChangeEvent changeEvent) {
 		for (String key : changeEvent.changedKeys()) {
 			ConfigChange change = changeEvent.getChange(key);
-			if(change.getPropertyName().equals("SysDeptMapper")) {
-				
-				System.out.println(change.getOldValue());
-
-				System.out.println(change.getNewValue());
-				
+			if(key.startsWith(Constants.APOLLO_MAPPER_PREFIX)) {
+				//动态刷新mybatis的mapper文件
 				refreshMapper.refreshMapper(change.getNewValue(),key);
 			}
 		}
